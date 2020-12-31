@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 
-public class Login {
+public class Authentification {
 	
 	private String user;
 	private String mdp;
@@ -19,7 +19,7 @@ public class Login {
 	
 	private Boolean Autorise = false ;
 
-	Login(String u , String m){
+	Authentification(String u , String m){
 		this.user = u;
 		this.mdp = m;
 		ResultSet resultats = null ;

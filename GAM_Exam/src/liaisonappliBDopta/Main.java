@@ -4,10 +4,10 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Login a = new Login("Tom","deusvult");
-		Login b = new Login("PasTom","deusvult");
-		Login c = new Login("PasTom","Pasdeusvult");
-		Login d = new Login("Tom","Pasdeusvult");
+		Authentification a = new Authentification("Tom","deusvult");
+		Authentification b = new Authentification("PasTom","deusvult");
+		Authentification c = new Authentification("PasTom","Pasdeusvult");
+		Authentification d = new Authentification("Tom","Pasdeusvult");
 		if (a.getAutorise() == true) {
 			System.out.println("ça marche");
 		}
