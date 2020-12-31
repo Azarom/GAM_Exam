@@ -16,7 +16,7 @@ public class Launcher {
 
 	public static void main(String[] args) {
 		System.out.println("app");
-		Frame frame = new Frame("Xame");
+		Frame frame = new Frame("Projet 1");
 		Login login = new Login("login");
 		login.setErrorMessage("invalid");
 		List<TimeExamElement> diary = Arrays.asList(

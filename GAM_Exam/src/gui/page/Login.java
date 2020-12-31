@@ -24,9 +24,9 @@ public class Login extends Panel<VBox>{
 	public Login(String name,EventHandler<ActionEvent> onclick){
 		super(new VBox(),name);
 		add(new Title("Connection"));
-		username = new TextField("Name2");
+		username = new TextField("Identifiant");
 		add(username);
-		password = new PassField("Name2");
+		password = new PassField("Mot de Passe");
 		add(password);
 		if(onclick==null) {
 			onclick = x->{this.next();};
