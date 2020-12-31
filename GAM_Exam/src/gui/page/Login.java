@@ -42,6 +42,7 @@ public class Login extends Panel<VBox>{
 	}
 	public void  setSubmitAction(EventHandler<ActionEvent> onclick) {
 		submit.setOnclick(onclick);
+		
 	}
 	public String getUsername(){
 		return username.getText();
