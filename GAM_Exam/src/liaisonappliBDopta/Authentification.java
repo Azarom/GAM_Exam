@@ -19,7 +19,7 @@ public class Authentification {
 	
 	private Boolean Autorise = false ;
 
-	Authentification(String u , String m){
+	public Authentification(String u , String m){
 		this.user = u;
 		this.mdp = m;
 		ResultSet resultats = null ;

@@ -12,7 +12,7 @@ public class Connexion {
 		String password="";
 		Connection cn=null;
 		
-		Connexion(){
+		public Connexion(){
 			
 		}
 		
