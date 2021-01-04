@@ -52,7 +52,7 @@ public class Examen {
 	}
 	
 	public void addBD() {
-		String requete = "INSERT INTO examen(ExamenTitre, ExamenLength) VALUES ('"+nom+"',"+duree+")";
+		String requete = "INSERT INTO examen(ExamenTitre, ExamenLength , ExamenMat,ExamenType) VALUES ('"+nom+"',"+duree+")";
 		Connexion a = new Connexion();
 		a.RequeteDB(requete);
 	}
