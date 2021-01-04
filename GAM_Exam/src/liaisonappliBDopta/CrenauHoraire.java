@@ -27,7 +27,7 @@ public class CrenauHoraire {
 	String password="";
 	Connection cn=null;
     
-	CrenauHoraire(String date,String heure,int duree) throws NamingException, SQLException{
+	public CrenauHoraire(String date,String heure,int duree) throws NamingException, SQLException{
     	this.date = date;
     	this.duree = duree;
     	this.setHeure(heure);

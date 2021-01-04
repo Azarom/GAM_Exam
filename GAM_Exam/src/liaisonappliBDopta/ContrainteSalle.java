@@ -6,7 +6,7 @@ public class ContrainteSalle extends Contrainte{
 	private int arg2;
 	
 	
-	ContrainteSalle(int i1 , String c,int idsalle){
+	public ContrainteSalle(int i1 , String c,int idsalle){
 		super(i1, c);
 		this.setArg2(idsalle);
 	}

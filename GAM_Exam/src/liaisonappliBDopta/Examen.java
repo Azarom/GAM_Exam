@@ -34,7 +34,7 @@ public class Examen {
 	Connection cn=null;
 	
 
-	Examen(String n , String mat ,int duree , int type , String materiel ) throws NamingException, SQLException {
+	public Examen(String n , String mat ,int duree , int type , String materiel ) throws NamingException, SQLException {
 		this.nom = n;
 		this.matiere = mat;
 		this.duree = duree;
@@ -56,7 +56,7 @@ public class Examen {
 	
 	public void addEtudiant(Etudiant Etu) {
 		etudiants.add(Etu);
-		String sqlQuery = "INSERT INTO contraintes(ExamID,ContrainteType,ContrainteArgument) VALUES ("+id+","+4+","+Etu.getId()+")";
+		String sqlQuery = "INSERT INTO contraintes(ExamID,ContrainteType,ContrainteArgument) VALUES ("+id+","+5+","+Etu.getId()+")";
 		Connexion c = new Connexion();
 		c.RequeteDB(sqlQuery);
 	}

@@ -23,7 +23,7 @@ public class Etudiant {
 
 	
 	
-	Etudiant(int numero , String nom, String prenom, String filliere ,int annee) throws NamingException, SQLException {
+	public Etudiant(int numero , String nom, String prenom, String filliere ,int annee) throws NamingException, SQLException {
 		this.nom = nom;
 		this.numeroetu = numero;
 		this.prenom = prenom;

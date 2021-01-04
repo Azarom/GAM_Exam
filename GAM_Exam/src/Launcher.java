@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
+import javax.naming.NamingException;
+
 import JFX.mote.Frame;
 import JFX.mote.layout.Popup;
 import gui.page.Login;
@@ -16,7 +18,7 @@ import liaisonappliBDopta.Authentification;
 
 public class Launcher {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NumberFormatException, NamingException {
 		System.out.println("app");
 		Frame frame = new Frame("Projet 1");
 		Login login = new Login("login");
