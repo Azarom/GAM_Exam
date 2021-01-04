@@ -11,6 +11,7 @@ public class Authentification {
 	
 	private String user;
 	private String mdp;
+	private String mail;
 	 String url="jdbc:mysql://localhost/proj_exam";
 		String login="root"; 
 		String password="";
@@ -38,6 +39,7 @@ public class Authentification {
 				String b = user + mdp ;
 				b = b.intern();
 				a = a.intern();
+				this.statut = resultats.getInt("LoginStatus");
 			if (a == b) {
 				this.Autorise = true;
 				System.out.println(this.Autorise) ;
@@ -59,7 +61,7 @@ public class Authentification {
 		}
 		
 	}
-
+	
 	public Boolean getAutorise() {
 		return Autorise;
 	}
@@ -75,5 +77,6 @@ public class Authentification {
 	public void setStatut(int statut) {
 		this.statut = statut;
 	}
-	
 }
+	
+

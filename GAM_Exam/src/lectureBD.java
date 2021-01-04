@@ -130,12 +130,12 @@ public class lectureBD {
 
 	public List<ContrainteExam> getCtrnExam(int i ){
 		 List<ContrainteExam> liste = new ArrayList<ContrainteExam>();
-		 String requeteAfter = "SELECT * FROM contraintes  WHERE c.ContrainteType = 1  AND ExamID ="+i+"";
-		 String requeteCoincidence = "SELECT * FROM contraintes  WHERE c.ContrainteType = 2  AND ExamID ="+i+"";
-		 String requeteExclusion = "SELECT * FROM contraintes  WHERE c.ContrainteType = 3  AND ExamID ="+i+"";
+		 String requeteAfter = "SELECT * FROM contraintes  WHERE ContrainteType = 1  AND ExamID ="+i+"";
+		 String requeteCoincidence = "SELECT * FROM contraintes  WHERE ContrainteType = 2  AND ExamID ="+i+"";
+		 String requeteExclusion = "SELECT * FROM contraintes  WHERE ContrainteType = 3  AND ExamID ="+i+"";
 			
 			
-			ResultSet resultats = null ;
+			ResultSet resultats4 = null ;
 			ResultSet resultats2 = null ;
 			ResultSet resultats3 = null ;
 			Statement ste = null;
@@ -143,17 +143,19 @@ public class lectureBD {
 				System.out.println("ok");
 				cn2= DriverManager.getConnection(url, login, password);
 				ste = cn2.createStatement();
-				resultats = ste.executeQuery(requeteAfter);
-				resultats2 = ste.executeQuery(requeteCoincidence);
-				resultats3 = ste.executeQuery(requeteExclusion);
-				while (resultats.next()) {
-				ContrainteExam a = new ContrainteExam(resultats.getInt("ExamID"),"AFTER", resultats.getInt("ContrainteArgument"));
+				resultats4 = ste.executeQuery(requeteAfter);
+				
+				
+				while (resultats4.next()) {
+				ContrainteExam a = new ContrainteExam(resultats4.getInt("ExamID"),"AFTER", resultats4.getInt("ContrainteArgument"));
 				liste.add(a);
 				}
+				resultats2 = ste.executeQuery(requeteCoincidence);
 				while (resultats2.next()) {
 					ContrainteExam a = new ContrainteExam(resultats2.getInt("ExamID"),"EXAM_COINCIDENCE", resultats2.getInt("ContrainteArgument"));
 					liste.add(a);
 					}
+				resultats3 = ste.executeQuery(requeteExclusion);
 				while (resultats3.next()) {
 					ContrainteExam a = new ContrainteExam(resultats3.getInt("ExamID"),"EXCLUSION", resultats3.getInt("ContrainteArgument"));
 					liste.add(a);
@@ -168,7 +170,7 @@ public class lectureBD {
 	}
 	public List<ContrainteSalle> getCtrnSalle(int i){
 		 List<ContrainteSalle> liste = new ArrayList<ContrainteSalle>();
-		 String requete2 = "SELECT * FROM contrainte WHERE c.ContrainteType = 0 AND c.ExamID ="+i+"";
+		 String requete2 = "SELECT * FROM contraintes WHERE ContrainteType = 0 AND ExamID ="+i+"";
 			System.out.println(requete2);
 			
 			ResultSet resultats = null ;

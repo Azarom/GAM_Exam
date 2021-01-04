@@ -51,7 +51,7 @@ public class PrepFich {
 			st = cn.createStatement();
 			rsi = st.executeQuery(requete);
 			while(rsi.next()) {
-				Examen a = new Examen(rsi.getString("ExamenTitre") ,"mat" , rsi.getInt("ExamenLenght"), 1, "aucun" );
+				Examen a = new Examen(rsi.getString("ExamenTitre") ,"mat" , rsi.getInt("ExamenLength"), 1, "aucun" );
 				int i = rsi.getInt("ExamenID");
 				List<Etudiant> b = new ArrayList<Etudiant>(); 
 				lectureBD l = new lectureBD();
@@ -113,8 +113,8 @@ public class PrepFich {
 				String c = z.substring(0,9);
 				String [] stra = c.split("-");
 				String date = stra[0] +":"+ stra[1] +":"+ stra[2];
-				String heure = rsi.getString("crenauxDT").substring(11,17);
-				CrenauHoraire a = new CrenauHoraire(date,heure, rsi.getInt("CreneauxLenght"));
+				String heure = rsi.getString("creneauxDT").substring(11,17);
+				CrenauHoraire a = new CrenauHoraire(date,heure, rsi.getInt("CreneauxLength"));
 				liste.add(a);
 			}
 			}
