@@ -32,13 +32,15 @@ public class Etudiant {
 		this.id = num;
 		num ++;
 		
-		Connexion a = new Connexion();
-		String sqlQuery = "INSERT INTO eleves(EleveNom, ElevePrenom, EleveNum, Promo, Annee) VALUES ('"+nom+"','"+prenom+"',"+numeroetu+",'"+promo+"',"+annee+")";
-		a.RequeteDB(sqlQuery);
+	
 		
 	}
 
-
+	public void addBD() {
+		Connexion a = new Connexion();
+		String sqlQuery = "INSERT INTO eleves(EleveNom, ElevePrenom, EleveNum, Promo, Annee) VALUES ('"+nom+"','"+prenom+"',"+numeroetu+",'"+promo+"',"+annee+")";
+		a.RequeteDB(sqlQuery);
+	}
 	public int getId() {
 		return id;
 	}

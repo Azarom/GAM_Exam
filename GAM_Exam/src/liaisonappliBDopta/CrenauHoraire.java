@@ -34,9 +34,7 @@ public class CrenauHoraire {
     	this.id = num;
     	num++;
     	
-    	String sqlQuery = "INSERT INTO creneaux(CreneauxDT, CreneauxLength) VALUES ('"+this.formate()+"',"+duree+")";
-    	Connexion a = new Connexion();
-		a.RequeteDB(sqlQuery);
+    	
     
     }
     
@@ -73,7 +71,11 @@ public class CrenauHoraire {
 	public void setId(int id) {
 		this.id = id;
 	}
-
+	public void AddDB() {
+		String sqlQuery = "INSERT INTO creneaux(CreneauxDT, CreneauxLength) VALUES ('"+this.formate()+"',"+duree+")";
+    	Connexion a = new Connexion();
+		a.RequeteDB(sqlQuery);
+	}
 	
 
 	public int getDuree() {

@@ -48,17 +48,16 @@ public class Examen {
 		
 
 		
-		String requete = "INSERT INTO examen(ExamenTitre, ExamenLength) VALUES ('"+n+"',"+duree+")";
+		
+	}
+	
+	public void addBD() {
+		String requete = "INSERT INTO examen(ExamenTitre, ExamenLength) VALUES ('"+nom+"',"+duree+")";
 		Connexion a = new Connexion();
 		a.RequeteDB(requete);
 	}
-	
-	
 	public void addEtudiant(Etudiant Etu) {
 		etudiants.add(Etu);
-		String sqlQuery = "INSERT INTO contraintes(ExamID,ContrainteType,ContrainteArgument) VALUES ("+id+","+5+","+Etu.getId()+")";
-		Connexion c = new Connexion();
-		c.RequeteDB(sqlQuery);
 	}
 	
 	public void addListEtudiant(List<Etudiant> E) {
@@ -66,25 +65,43 @@ public class Examen {
 			this.addEtudiant(etu); 
 		}
 	}
+	public void addEtudiantBD(Etudiant Etu) {
+		etudiants.add(Etu);
+		String sqlQuery = "INSERT INTO contraintes(ExamID,ContrainteType,ContrainteArgument) VALUES ("+id+","+5+","+Etu.getId()+")";
+		Connexion c = new Connexion();
+		c.RequeteDB(sqlQuery);
+	}
+	public void addListEtudiantBD(List<Etudiant> E) {
+		for (Etudiant etu : E) {
+			this.addEtudiant(etu); 
+		}
+	}
 	public void addContrainteExam(ContrainteExam c) {
+		contraintesExam.add(c);
+		}
+	public void addContrainteExamBD(ContrainteExam c) {
 		contraintesExam.add(c);
 		String sqlQuery = "INSERT INTO contraintes(ExamID,ContrainteType,ContrainteArgument) VALUES ("+id+","+1+","+c.getArg()+")";
 		Connexion con = new Connexion();
 		con.RequeteDB(sqlQuery);
-		}
-		
+		}	
 			
-		
-		
-	
-	
 	public void addListContrainteExam(List<ContrainteExam> E) {
 		for (ContrainteExam c : E) {
 			this.addContrainteExam(c); 
 		}
 	}
+	public void addListContrainteExamBD(List<ContrainteExam> E) {
+		for (ContrainteExam c : E) {
+			this.addContrainteExamBD(c); 
+		}
+	}
 	
 	public void addContrainteSalle(ContrainteSalle c) {
+		contraintesSalle.add(c);
+		
+	}
+	public void addContrainteSalleBD(ContrainteSalle c) {
 		contraintesSalle.add(c);
 		String sqlQuery = "INSERT INTO contraintes(ExamID,ContrainteType,ContrainteArgument) VALUES ("+id+","+0+","+c.getArg()+")";
 		Connexion con = new Connexion();
@@ -95,6 +112,11 @@ public class Examen {
 	public void addListContrainteSalle(List<ContrainteSalle> E) {
 		for (ContrainteSalle c : E) {
 			this.addContrainteSalle(c); 
+		}
+	}
+	public void addListContrainteSalleBD(List<ContrainteSalle> E) {
+		for (ContrainteSalle c : E) {
+			this.addContrainteSalleBD(c); 
 		}
 	}
 	

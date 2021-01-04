@@ -36,12 +36,10 @@ public class Launcher {
 		});
 	
 		lectureBD a = new lectureBD();
-		List<TimeExamElement> diary = Arrays.asList(
-				new TimeExamElement("F 021","Français",LocalDateTime.of(2021, 01, 01, 12, 30),LocalTime.of(1, 30),null)
-				);
+		
 		 
 		List<List<TimeExamElement>> diaries = Arrays.asList(
-				diary,a.execute()
+				a.execute()
 				);
 		MainApp maz = new MainApp("app");
 		System.out.println(diaries);

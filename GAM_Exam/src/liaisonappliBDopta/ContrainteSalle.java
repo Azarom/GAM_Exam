@@ -11,6 +11,7 @@ public class ContrainteSalle extends Contrainte{
 		this.setArg2(idsalle);
 	}
 
+	
 
 	public int getArg2() {
 		return arg2;

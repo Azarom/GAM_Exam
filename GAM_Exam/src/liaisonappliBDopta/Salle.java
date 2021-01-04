@@ -19,7 +19,11 @@ public class Salle {
 	public int getId() {
 		return id;
 	}
-
+	public void addBD() {
+		String requete = "INSERT INTO salles(SallesNom, SallesCapacite) VALUES ('"+nom+"',"+capacite+")";
+		Connexion a = new Connexion();
+		a.RequeteDB(requete);
+	}
 
 	public String getNom() {
 		return nom;
