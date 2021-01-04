@@ -25,7 +25,8 @@ public class Launcher {
 	private static int statuActuel ;
 	public static void main(String[] args) throws NumberFormatException, NamingException {
 		PrepFich po = new PrepFich();
-		CreationFich pa = po.Recup("D:/exam/exam_import");
+		CreationFich pa = po.Recup("D:/exam/exam_import.exam");
+		pa.creerFile();
 		
 		System.out.println("app");
 		Frame frame = new Frame("Projet 1");

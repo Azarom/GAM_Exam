@@ -55,7 +55,7 @@ public class lectureBD {
 		}
 		
 		for ( int a = 1 ; a<(i+1) ; a++) {
-		String requete2 = "SELECT YEAR(c.CreneauxDT),MONTH(c.CreneauxDT),DAY(c.CreneauxDT),HOUR(c.CreneauxDT),MINUTE(c.CreneauxDT),e.ExamenTitre,s.sallesNom FROM creneaux c INNER JOIN liaison l ON c.CreneauxID = l.CreneauxID INNER JOIN Examen e ON e.ExamenID = l.ExamenID INNER JOIN salles s ON s.sallesID = l.sallesID WHERE e.ExamenID ="+a+"";
+		String requete2 = "SELECT YEAR(c.CreneauxDT),MONTH(c.CreneauxDT),DAY(c.CreneauxDT),HOUR(c.CreneauxDT),MINUTE(c.CreneauxDT),e.ExamenTitre,s.sallesNom FROM creneaux c INNER JOIN liaison l ON c.CreneauxID = l.CreneauxID INNER JOIN Examen e ON e.ExamenID = l.ExamenID INNER JOIN salles s ON s.sallesID = l.sallesID WHERE e.ExamenID ="+a+" ORDER BY e.ExamenID";
 		System.out.println(requete2);
 		
 		ResultSet resultats = null ;
